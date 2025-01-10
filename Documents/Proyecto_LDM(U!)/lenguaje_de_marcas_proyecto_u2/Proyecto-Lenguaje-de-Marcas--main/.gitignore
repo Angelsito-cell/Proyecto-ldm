@@ -1,0 +1,10 @@
+AppData/
+Desktop/
+Documents/
+Downloads/
+Music/
+Pictures/
+Videos/
+*.exe
+*.log
+*.pyc
