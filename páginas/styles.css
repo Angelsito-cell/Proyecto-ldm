@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    background-color: #1c1c1c;
+    background-size: cover; 
+    background-position: center bottom;
+    background-attachment: fixed; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 5%;
+    background-color: transparent;
+    width: 90%;
+}
+
+.header__logo {
+    flex: 0 0 auto;
+    padding-right: 7%;
+}
+
+.header__logo img {
+    max-height: 6vh;
+    width: auto;
+    display: block;
+}
+
+.header__search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.header__search-bar input[type="text"] {
+    padding: 1vh;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.header__search-button {
+    padding: 0.5vh 1vh;
+}
+
+.header__navigation {
+    flex: 0 0 auto;
+    padding: 0 2%;
+}
+
+.navigation__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3%;
+}
+
+.navigation__menu-item {
+    display: inline;
+}
+
+.navigation__menu-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.main {
+    min-height: 80vh;
+    padding: 5%;
+}
+
+.main__logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 70%;
+    height: auto;
+    padding: 1vh 0;
+}
+
+.footer {
+    /* Estilos para el pie de página (opcional) */
+    width: 100%;
+    padding: 1vh 0;
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+}
