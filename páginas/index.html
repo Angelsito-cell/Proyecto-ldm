@@ -12,9 +12,7 @@
             <img src="imgs/logo.png" alt="logo de la página">
         </span>
         <form action="buscar" method="get" class="header__search-bar">
-            <label for="buscar" class="header__search-label">Buscar:</label>
             <input type="text" name="query" placeholder="Buscar..." class="header__search-input">
-            <button type="submit" class="header__search-button">Buscar</button>
         </form>
         <nav class="header__navigation">
             <ul class="navigation__menu">
@@ -28,11 +26,54 @@
 
     <main class="main">
         <img src="imgs/logo.png" alt="logo de la página" class="main__logo"> 
-        <!-- Contenido principal aquí -->
+        <section id="custom-text-section">
+            <p id="custom-text">Bienvenidos seáis a Hell's Vault. Un blog en el que voy a hacer reviews de toda la música, juegos y contenido audiovisual que consuma. 
+                Como adelanto, os vais a encontrar música como Acid Bath o Sodom, juegos como Cry of Fear o Hotline Miami y películas como Tesis o clásicos del Slasher ochentero
+                Espero que disfruteis de mis pasiones, saludos. 
+            </p>
+        </section>
+
     </main>
 
     <footer class="footer">
-        <!-- Contenido del pie de página aquí -->
+        <div class="footer__content">
+            <div class="footer__section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Tienda</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3>Contacto</h3>
+                <p>Email: angelmuñoz@hellsvault.com</p>
+                <p>Teléfono: +34 649 04 73 06</p>
+                <p>Dirección: C. Amiel, s/n, 11012 Barriada de la Paz, Cádiz</p>
+            </div>
+            <div class="footer__section">
+                <h3>Síguenos</h3>
+                <ul class="footer__social">
+                    <li><a href="#" target="_blank">Facebook</a></li>
+                    <li><a href="#" target="_blank">Twitter</a></li>
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 Hell's Vault. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <script>
+        const toggleButton = document.getElementById('toggle-mode');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
+    </script>
+
 </body>
+
 </html>
