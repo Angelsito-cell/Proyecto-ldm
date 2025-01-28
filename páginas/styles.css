@@ -64,7 +64,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem; /* Ajustar padding para mayor separación */
+    padding: 0 1rem; /* Ajustar padding para mayor separación */
 }
 
 #header.scrolled {
@@ -110,20 +110,20 @@ body {
     justify-content: center;
     flex-grow: 1;
     width: 100%;
-    padding: 2rem; /* Ajustar padding para mayor separación */
+    padding: 1rem; /* Ajustar padding para mayor separación */
     margin-top: 10rem; /* Ajustar el margen superior para evitar que el contenido quede pegado al header */
 }
 
 #main {
     background: #171616;
-    padding: 2rem; /* Ajustar padding para mayor separación */
+    padding: 1rem; /* Ajustar padding para mayor separación */
     border-radius: 1rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     width: 100%;
     flex-grow: 1;
     overflow: auto;
-    margin: 1rem; /* Para dar espacio alrededor del main */
+    margin: 0.5rem; /* Para dar espacio alrededor del main */
 }
 
 #main__logo {
@@ -135,8 +135,8 @@ body {
 }
 
 .custom-text-section {
-    margin-top: 2rem;
-    padding-bottom: 9rem;
+    margin-top: 1.5rem;
+    padding-bottom: 2rem;
     border-radius: 0.5rem;
 }
 
@@ -146,7 +146,7 @@ body {
     line-height: 1.5;
     color: #ffffff;
     box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
-    margin: 1rem; /* Añadir margen para separación */
+    margin: 0.5rem; /* Añadir margen para separación */
 }
 
 #Más-Abajo {
@@ -174,7 +174,7 @@ body {
     font-weight: bold;
     text-align: center;
     font-family: var(--font-family-decorative);
-    padding-top: 9rem;
+    padding-top: 3rem;
 }
 
 .review-cards {
@@ -231,7 +231,7 @@ body {
 .content-wrapper {
     display: flex;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1.5rem;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -334,6 +334,7 @@ body {
 
 #album-covers {
     text-align: center;
+    padding: 2rem 0;
 }
 
 #album-covers h2 {
@@ -346,7 +347,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -414,6 +415,33 @@ body {
 
 #search-bar:focus {
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2); /* Sombra más grande al enfocar */
+}
+/* Paginación */
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.page-btn:hover {
+    background: var(--secondary-color);
+}
+
+#page-number {
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color: var(--dark-color);
 }
 /* Footer */
 #footer {
