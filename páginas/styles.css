@@ -490,9 +490,10 @@ body {
 }
 
 .text-content p {
-    font-size: 1.1rem; /* Usa rem para el tamaño de fuente */
+    font-size: 1rem; /* Usa rem para el tamaño de fuente */
     line-height: 1.6;
     margin-bottom: var(--gap-small); /* Usa la variable para el margen */
+    color: var(--light-color);
 }
 
 /* Barra lateral */
@@ -579,6 +580,33 @@ body {
     border-color: var(--accent-color); /* Usa la variable para el borde */
     box-shadow: 0 0 1.5rem rgba(255, 0, 0, 0.9); /* Usa rem para la sombra */
     transform: scale(1.1);
+}
+
+/* Estilos para el título */
+.title {
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 2.5rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8); /* Usa rem para la sombra del texto */
+    text-align: center;
+}
+
+/* Estilos para las estrellas de calificación */
+.rating {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 2rem; /* Usa rem para el tamaño de las estrellas */
+    margin-top: var(--gap-small); /* Usa la variable para el margen superior */
+    margin-bottom: var(--gap-small); /* Usa la variable para el margen inferior */
+}
+
+/* Estilos para la barra separadora */
+.title-line {
+    width: 80%;
+    margin: var(--gap-small) auto; /* Usa la variable para el margen */
+    border: 0.0625rem solid var(--accent-color); /* Usa rem para el borde */
 }
 /* Footer */
 #footer {
