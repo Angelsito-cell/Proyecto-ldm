@@ -1,3 +1,24 @@
+/* Variables CSS */
+:root {
+    --primary-color: #D00000;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --background-image: url("imgs/infierno.jpg");
+    --font-family: 'Arial, sans-serif';
+    --font-family-decorative: 'Cursive', 'Fantasy';
+    --font-size-base: 1rem;
+    --font-size-large: 2rem;
+    --font-size-xlarge: 3rem;
+    --font-size-xxlarge: 4rem;
+    --font-size-massive: 8rem;
+    --header-height: 11vh;
+    --gap-large: 10%;
+    --gap-medium: 2rem;
+    --gap-small: 1rem;
+}
+
+/* Reset básico */
 html {
     scroll-behavior: smooth;
 }
@@ -8,12 +29,13 @@ html {
     box-sizing: border-box;
 }
 
+/* Estilos generales */
 body {
     display: flex;
     background-size: cover; 
     background-position: center bottom;
     background-attachment: fixed; 
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     font-weight: bolder;
     margin: 0;
     padding: 0;
@@ -25,22 +47,24 @@ body {
     justify-content: flex-start;
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
-    background-image: url("imgs/infierno.jpg");
+    background-image: var(--background-image);
+    padding-top: var(--header-height); /* Ajustar el padding top para evitar que el contenido se quede pegado al header */
 }
 
+/* Header */
 #header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 11vh;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #D00000 100%);
+    height: var(--header-height);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, var(--primary-color) 100%);
     z-index: 100;
     transition: background 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0 2rem; /* Ajustar padding para mayor separación */
 }
 
 #header.scrolled {
@@ -48,7 +72,7 @@ body {
 }
 
 .header__logo img {
-    max-height: 7vh;
+    max-height: calc(var(--header-height) - 4vh);
     width: auto;
 }
 
@@ -63,7 +87,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 10%;
+    gap: var(--gap-large);
 }
 
 .navigation__menu-item {
@@ -73,11 +97,12 @@ body {
 .navigation__menu-link {
     text-decoration: none;
     color: #000000;
-    font-size: 1.2rem;
+    font-size: calc(var(--font-size-base) * 1.2);
     font-weight: bold;
     letter-spacing: 0.1rem;
 }
 
+/* Main Container */
 #main-container {
     display: flex;
     flex-direction: column;
@@ -85,18 +110,20 @@ body {
     justify-content: center;
     flex-grow: 1;
     width: 100%;
-    margin: 10rem;
+    padding: 2rem; /* Ajustar padding para mayor separación */
+    margin-top: 10rem; /* Ajustar el margen superior para evitar que el contenido quede pegado al header */
 }
 
 #main {
     background: #171616;
-    padding: 2rem;
+    padding: 2rem; /* Ajustar padding para mayor separación */
     border-radius: 1rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     width: 100%;
     flex-grow: 1;
     overflow: auto;
+    margin: 1rem; /* Para dar espacio alrededor del main */
 }
 
 #main__logo {
@@ -104,7 +131,7 @@ body {
     margin: 0 auto;
     max-width: 50%;
     height: auto;
-    padding: 1vh 0;
+    padding: 0.25rem 0;
 }
 
 .custom-text-section {
@@ -115,18 +142,19 @@ body {
 
 #custom-text {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: calc(var(--font-size-base) * 1.2);
     line-height: 1.5;
     color: #ffffff;
     box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    margin: 1rem; /* Añadir margen para separación */
 }
 
 #Más-Abajo {
-    color: #D00000;
-    font-size: 2rem;
+    color: var(--primary-color);
+    font-size: var(--font-size-xlarge);
     font-weight: bold;
     text-align: center;
-    font-family: 'Cursive', 'Fantasy';
+    font-family: var(--font-family-decorative);
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
@@ -141,11 +169,11 @@ body {
 }
 
 #reviews {
-    color: #D00000;
-    font-size: 3rem;
+    color: var(--primary-color);
+    font-size: var(--font-size-xxlarge);
     font-weight: bold;
     text-align: center;
-    font-family: 'Cursive', 'Fantasy';
+    font-family: var(--font-family-decorative);
     padding-top: 9rem;
 }
 
@@ -162,6 +190,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: 1rem; /* Añadir margen para separación */
 }
 
 .review-card__image {
@@ -182,21 +211,21 @@ body {
 }
 
 .review-card__title {
-    color: #D00000;
-    font-size: 2rem;
+    color: var(--primary-color);
+    font-size: var(--font-size-large);
     font-weight: bold;
     text-align: center;
-    font-family: 'Cursive', 'Fantasy';
+    font-family: var(--font-family-decorative);
     padding: 1rem;
 }
 
 #Novedades {
-    color: #D00000;
-    font-size: 3rem;
+    color: var(--primary-color);
+    font-size: var(--font-size-xxlarge);
     font-weight: bold;
     text-align: center;
-    font-family: 'Cursive', 'Fantasy';
-    padding: 3%;
+    font-family: var(--font-family-decorative);
+    padding: 3rem;
 }
 
 .content-wrapper {
@@ -204,23 +233,25 @@ body {
     gap: 2rem;
     padding: 2rem;
     justify-content: space-between;
-    flex-wrap: wrap; /* Asegura que los elementos se ajusten en pantallas más pequeñas */
+    flex-wrap: wrap;
 }
 
 .novedades {
     background-color: #1e1e1e;
     padding: 2rem;
     border-radius: 1rem;
-    width: 60%; /* Ajusta el ancho según sea necesario */
+    width: 60%;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.5);
     flex: 1;
     overflow-y: auto;
     max-height: 50vh;
+    margin: 1rem; /* Añadir margen para separación */
 }
 
 .news-card {
     padding: 1.5rem;
     border-radius: 0.8rem;
+    margin: 1rem; /* Añadir margen para separación */
 }
 
 .custom-list {
@@ -233,8 +264,8 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
     color: #f5f5f5;
 }
 
@@ -250,7 +281,7 @@ body {
 
 .extra-content {
     flex: 1;
-    max-width: 35%; /* Ajusta el ancho según sea necesario */
+    max-width: 35%;
     background-color: #333;
     padding: 2rem;
     border-radius: 1rem;
@@ -258,10 +289,11 @@ body {
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.5);
     text-align: left;
     overflow: hidden;
+    margin: 1rem; /* Añadir margen para separación */
 }
 
 .extra-content__title {
-    color: #D00000;
+    color: var(--primary-color);
     text-align: center;
     padding-bottom: 1rem;
 }
@@ -274,30 +306,140 @@ body {
     border-radius: 1rem;
 }
 
+#musica {
+    color: var(--primary-color);
+    font-size: var(--font-size-massive);
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--font-family-decorative);
+    padding-top: 1rem;
+    padding-bottom: 4rem; 
+}
+
+/* Búsqueda */
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 0rem; /* Ajustar el margen superior */
+}
+
+#search-bar {
+    width: 50%; /* Hacer la barra de búsqueda más grande */
+    padding: 0.4rem; /* Aumentar el padding para hacerla más alta */
+    font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
+    border-radius: 0.3rem; /* Bordes redondeados */
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); /* Añadir una sombra */
+    transition: box-shadow 0.3s ease
+}
+
+#album-covers {
+    text-align: center;
+}
+
+#album-covers h2 {
+    font-size: var(--font-size-xlarge);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.album-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.album {
+    width: calc(100% / 3 - 2rem); /* Ajusta el ancho de cada álbum */
+    max-width: 200px; /* Máximo ancho de cada álbum */
+    transition: opacity 0.5s ease, transform 0.5s ease, order 0.5s ease; /* Transiciones suaves */
+    opacity: 1;
+    transform: scale(1);
+    order: 0;
+}
+
+.album.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    order: 1;
+    pointer-events: none; /* Desactiva interacciones mientras está oculto */
+}
+
+.album a {
+    text-decoration: none;
+    color: inherit; /* Mantener el color del texto */
+    display: block;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Transiciones suaves */
+}
+
+.album img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Transiciones suaves */
+}
+
+.album a:hover img {
+    transform: scale(1.05); /* Agrandar imagen */
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.3); /* Sombra más grande */
+}
+
+.album p {
+    margin-top: 0.5rem;
+    font-size: var(--font-size-base);
+    color: var(--dark-color);
+}
+
+/* Búsqueda */
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Ajustar el margen superior */
+}
+
+#search-bar {
+    width: 50%; /* Hacer la barra de búsqueda más grande */
+    padding: 1rem; /* Aumentar el padding para hacerla más alta */
+    font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
+    border: 0.2rem solid var(--primary-color); /* Añadir un borde */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); /* Añadir una sombra */
+    margin-bottom: 1rem; /* Añadir margen inferior para separación */
+    transition: box-shadow 0.3s ease; /* Transición suave para sombra */
+}
+
+#search-bar:focus {
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2); /* Sombra más grande al enfocar */
+}
+/* Footer */
 #footer {
     background-color: #343a40;
     color: #ffffff;
-    padding: 3% 0;
+    padding: 3rem 0;
     text-align: center;
     width: 100%;
 }
 
 .footer__content {
     display: flex;
-    justify-content: space-evenly; /* Espacio igual entre los elementos */
-    align-items: flex-start; /* Alinea verticalmente al inicio */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
-    gap: 2rem; /* Espacio entre las secciones */
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .footer__section {
-    flex: 1; /* Permite que cada sección tenga proporciones flexibles */
-    max-width: 20rem; /* Ancho máximo de cada sección */
-    text-align: center  ; /* Alineación del texto dentro de cada sección */
+    flex: 1;
+    max-width: 20rem;
+    text-align: center;
 }
 
 .footer__section.central {
-    text-align: center; /* Centra el contenido del bloque "central" */
+    text-align: center;
 }
 
 .footer__section-title {
@@ -326,15 +468,15 @@ body {
     text-decoration: underline;
 }
 
-.footer_contacto {
+.footer__contact {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer_contacto-item {
+.footer__contact-item {
     margin: 1rem 0;
-    text-align: left; /* Alineación del texto a la izquierda */
+    text-align: left;
 }
 
 .footer__social {
@@ -342,7 +484,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Espacio entre los ítems */
+    gap: 1rem;
 }
 
 .footer__social-item {
@@ -351,6 +493,6 @@ body {
 
 .footer__bottom {
     border-top: 0.1rem solid #ffffff;
-    padding: 1rem 0;
+    padding: 1rem;
     margin-top: 2rem;
 }

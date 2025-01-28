@@ -7,51 +7,161 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header id="header">
+        <span class="header__logo">
+            <img src="imgs/logo.png" alt="logo de la página">
+        </span>
+        <nav class="header__navigation">
+            <ul class="navigation__menu">
+                <li class="navigation__menu-item"><a href="#" class="navigation__menu-link">Cuenta</a></li>
+                <li class="navigation__menu-item"><a href="#" class="navigation__menu-link">Tienda</a></li>
+                <li class="navigation__menu-item"><a href="#" class="navigation__menu-link">Contacto</a></li>
+                <li class="navigation__menu-item"><a href="#" class="navigation__menu-link">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <header id="header">
-            <span id="header__logo">
-                <img src="imgs/logo.png" alt="logo de la página">
-            </span>
-            <nav id="header__navigation">
-                <ul id="navigation__menu">
-                    <li id="navigation__menu-item"><a href="#" id="navigation__menu-link">Índice</a></li>
-                    <li id="navigation__menu-item"><a href="#" id="navigation__menu-link">Tienda</a></li>
-                    <li id="navigation__menu-item"><a href="#" id="navigation__menu-link">Contacto</a></li>
-                    <li id="navigation__menu-item"><a href="#" id="navigation__menu-link">Blog</a></li>
+    <section id="main-container">   
+        <main id="main">
+            <h1 id="musica"> 𝕸ú𝖘𝖎𝖈𝖆</h1>
+            <form id="search-form">
+                <input type="text" id="search-bar" placeholder="Buscar...">
+            </form>
+            <section class="custom-text-section">
+                <p id="custom-text">
+                    Aquí vas a ver reviews de los álbumes/singles/recopilatorios que escuche o ya haya escuchado a lo largo del tiempo
+                    <br> Daré mi opinión, además de dar los datos de la banda y el álbum de forma un poco más detallada y algunos enlaces de interés
+                </p>
+                </section>
+                <section id="albums">
+
+                    <section id="album-covers">
+                        <ul class="album-row">
+                            <li class="album">
+                                <a href="review-sbg.html">
+                                    <img src="imgs/sbg.jpg" alt="Scream Bloody Gore (Death)">
+                                    <p>Scream Bloody Gore (Death)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-m16.html">
+                                    <img src="imgs/m16.jpg" alt="M16 de Sodom">
+                                    <p>M-16 (Sodom)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-wtksp.html">
+                                    <img src="imgs/wtksp.jpg" alt="Acid Bath">
+                                    <p>When the Kite String Pops (Acid Bath)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-yma.html">
+                                    <img src="imgs/yma.jpg" alt="Yo Minoria Absoluta de Extremoduro">
+                                    <p>Yo, Minoria Absoluta (Extremoduro)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-iowa.html">
+                                    <img src="imgs/iowa.jpg" alt="IOWA de Slipknot">
+                                    <p>IOWA (Slipknot)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-misfits.html">
+                                    <img src="imgs/misfits.jpg" alt="Misfits Collection">
+                                    <p>Collection (Misfits)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-up.html">
+                                    <img src="imgs/up.jpeg" alt="Unkown Pleasures de Joy Division">
+                                    <p>Unkown Pleasures (Joy Division)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-endorama.html">
+                                    <img src="imgs/endorama.jpg" alt="Endorama de Kreator">
+                                    <p>Endorama (Kreator)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-nr.html">
+                                    <img src="imgs/nr.jpg" alt="No Regrets de Dope">
+                                    <p>No Regrets (Dope)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-fmts.html">
+                                    <img src="imgs/fmts.jpg" alt="From Mars to Sirius de Gojira">
+                                    <p>From Mars to Sirius (Gojira)</p>
+                                </a>
+                            </li>
+                            <li class="album">
+                                <a href="review-lad.html">
+                                    <img src="imgs/lad.jpg" alt="Live after death de Iron Maiden">
+                                    <p>Live After Death (Iron Maiden)</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </main>
+            </section>
+           <script>
+
+document.getElementById('search-bar').addEventListener('input', function() {
+    let filter = this.value.toLowerCase();
+    let albums = document.querySelectorAll('.album');
+
+    albums.forEach((album, index) => {
+        let title = album.querySelector('p').textContent.toLowerCase();
+        if (title.includes(filter)) {
+            album.classList.remove('hidden');
+            album.style.order = 0; // Colocar los elementos coincidentes arriba
+        } else {
+            album.classList.add('hidden');
+            album.style.order = 1 + index; // Mantener el orden original para los elementos no coincidentes
+        }
+    });
+});
+
+           </script>
+
+    </main>
+</section>
+
+    <footer id="footer">
+        <section class="footer__content">
+            <section class="footer__section">
+                <h3 class="footer__section-title">Enlaces Rápidos</h3>
+                <ul class="footer__section-list">
+                    <li class="footer__section-list-item"><a href="#">Inicio</a></li>
+                    <li class="footer__section-list-item"><a href="#">Servicios</a></li>
+                    <li class="footer__section-list-item"><a href="#">Tienda</a></li>
+                    <li class="footer__section-list-item"><a href="#">Contacto</a></li>
+                    <li class="footer__section-list-item"><a href="#">Blog</a></li>
                 </ul>
-            </nav>
-        </header>
-        <footer id="footer">
-            <div id="footer__content">
-                <div id="footer__section">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Tienda</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div id="footer__section">
-                    <h3>Contacto</h3>
-                    <p>Email: angelmuñoz@hellsvault.com</p>
-                    <p>Teléfono: +34 649 04 73 06</p>
-                    <p>Dirección: C. Amiel, s/n, 11012 Barriada de la Paz, Cádiz</p>
-                </div>
-                <div id="footer__section">
-                    <h3>Síguenos</h3>
-                    <ul id="footer__social">
-                        <li><a href="#" target="_blank">Facebook</a></li>
-                        <li><a href="#" target="_blank">Twitter</a></li>
-                        <li><a href="#" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="footer__bottom">
-                <p>&copy; 2025 Hell's Vault. Todos los derechos reservados.</p>
-            </div>
-        </footer>
+            </section>
+            <section class="footer__section">
+                <h3 class="footer__section-title">Contacto</h3>
+                <ul class="footer_contacto">
+                    <li class="footer_contacto-item">Email: angelmuñoz@hellsvault.com</li>
+                    <li class="footer_contacto-item">Teléfono: +34 649 04 73 06</li>
+                    <li class="footer_contacto-item">Dirección: C. Amiel, s/n, 11012 Barriada de la Paz, Cádiz</li>
+                </ul>
+            </section>
+            <section class="footer__section">
+                <h3 class="footer__section-title">Síguenos</h3>
+                <ul class="footer__social">
+                    <li class="footer__social-item"><a href="#" target="_blank">Facebook</a></li>
+                    <li class="footer__social-item"><a href="#" target="_blank">Twitter</a></li>
+                    <li class="footer__social-item"><a href="#" target="_blank">Instagram</a></li>
+                </ul>
+            </section>
+        </section>
+        <section class="footer__bottom">
+            <p>&copy; 2025 Hell's Vault. Todos los derechos reservados.</p>
+        </section>
+    </footer>
 </body>
-
 </html>
