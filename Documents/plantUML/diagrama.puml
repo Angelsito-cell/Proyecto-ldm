@@ -1,0 +1,79 @@
+@startuml
+' Clases principales
+class Cliente {
+    - id: int
+    - nombre: string
+    - email: string
+    + realizarPedido(pedido: Pedido)
+}
+
+class Pedido {
+    - id: int
+    - fecha: Date
+    - estado: EstadoPedido
+    - detalles: List<DetallePedido>
+    - pagos: List<Pago>
+    + calcularTotal(): float
+    + actualizarEstado(nuevoEstado: EstadoPedido)
+}
+
+enum EstadoPedido {
+    Pdte
+    Pgdo
+    Pcdo
+    Envdo
+    Entgdo
+}
+
+class Producto {
+    - id: int
+    - nombre: string
+    - descripcion: string
+    - precio: float
+    - impuestos: float
+    - stock: int
+    + actualizarStock(cantidad: int)
+}
+
+class DetallePedido {
+    - cantidad: int
+    - subtotal: float
+    + calcularSubtotal(): float
+}
+
+class Pago {
+    - id: int
+    - monto: float
+    - fecha: Date
+    - formaPago: FormaPago
+}
+
+abstract class FormaPago {
+}
+
+class PagoTarjeta {
+    - numeroTarjeta: string
+    - fechaExpiracion: Date
+    - tipoTarjeta: string
+}
+
+class PagoEfectivo {
+    - tipoMoneda: string
+}
+
+class PagoCheque {
+    - nombre: string
+    - banco: string
+}
+
+' Relaciones entre clases
+Cliente "1" -- "0..*" Pedido
+Pedido "1" -- "1..*" DetallePedido
+DetallePedido "1" -- "1" Producto
+Pedido "1" -- "0..*" Pago
+Pago "1" --|> FormaPago
+FormaPago <|-- PagoTarjeta
+FormaPago <|-- PagoEfectivo
+FormaPago <|-- PagoCheque
+Pedido "1" -- "*" EstadoPedido
+@enduml
