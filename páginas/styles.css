@@ -25,6 +25,16 @@
     --border-color: #444;
 }
 
+a {
+    color: inherit; /* Hereda el color del texto normal */
+    text-decoration: none; /* Quita el subrayado */
+}
+
+a:hover {
+    color: inherit; /* Mantiene el color al pasar el mouse */
+    text-decoration: underline; /* Añade subrayado al pasar el mouse */
+}
+
 /* Reset básico */
 html {
     scroll-behavior: smooth;
@@ -177,12 +187,16 @@ body {
 
 #reviews {
     color: var(--primary-color);
-    font-size: var(--font-size-xxlarge);
     font-weight: bold;
     text-align: center;
     font-family: var(--font-family-decorative);
     padding-top: 3rem;
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 4rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
 }
+
 
 .review-cards {
     display: flex;
@@ -228,11 +242,14 @@ body {
 
 #Novedades {
     color: var(--primary-color);
-    font-size: var(--font-size-xxlarge);
     font-weight: bold;
     text-align: center;
     font-family: var(--font-family-decorative);
-    padding: 3rem;
+    padding-top: 3rem;
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 4rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
 }
 
 .content-wrapper {
@@ -270,7 +287,7 @@ body {
 .custom-list__item {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--gap-small);
     font-family: var(--font-family);
     font-size: var(--font-size-base);
     color: #f5f5f5;
@@ -281,10 +298,13 @@ body {
 }
 
 .custom-list__icon {
-    width: 1.25rem; /* 20px */
-    height: 1.25rem; /* 20px */
-    margin-right: 0.625rem; /* 10px */
+    width: 1.5rem; /* Tamaño del ícono */
+    height: 1.5rem;
+    margin-right: 0.5rem; /* Espaciado entre ícono y texto */
+    flex-shrink: 0; /* Evita que el ícono se reduzca */
 }
+
+
 
 .extra-content {
     flex: 1;
@@ -315,28 +335,38 @@ body {
 
 #musica {
     color: var(--primary-color);
-    font-size: var(--font-size-massive);
     font-weight: bold;
     text-align: center;
     font-family: var(--font-family-decorative);
-    padding-top: 1rem;
-    padding-bottom: 4rem; 
+    padding-top: 3rem;
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 6rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
 }
 
 /* Búsqueda */
 #search-form {
     display: flex;
     justify-content: center;
-    margin-top: 0rem; /* Ajustar el margen superior */
+    margin-top: 0.4rem; /* Ajustar el margen superior */
 }
 
 #search-bar {
-    width: 50%; /* Hacer la barra de búsqueda más grande */
-    padding: 0.4rem; /* Aumentar el padding para hacerla más alta */
-    font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
-    border-radius: 0.3rem; /* Bordes redondeados */
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); /* Añadir una sombra */
-    transition: box-shadow 0.3s ease
+
+        width: auto; /* Ajusta el ancho según lo que necesites */
+        height: 2.5rem; /* Controla directamente la altura */
+        font-size: 1rem; /* Tamaño de fuente más pequeño */
+        padding: 0.4rem; /* Espaciado interno consistente */
+        border-radius: 0.5rem; /* Bordes redondeados */
+        box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); /* Sombra */
+        background: black;
+        color: white;
+        border: 0.1rem solid var(--primary-color); /* Opcional: Borde más fino */
+        transition: all 0.3s ease;
+        letter-spacing: 0.05rem;
+        box-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
+    
 }
 
 #album-covers {
@@ -354,7 +384,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 3rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -399,7 +429,7 @@ body {
 .album p {
     margin-top: 0.5rem;
     font-size: var(--font-size-base);
-    color: var(--dark-color);
+    color: var(--primary-color);
 }
 
 /* Búsqueda */
@@ -500,42 +530,53 @@ body {
 .sidebar {
     flex: 1;
     background: #2c2c2c;
-    padding: var(--gap-small); /* Usa la variable para el padding */
-    border-radius: 0.5rem; /* Usa rem para el radio del borde */
-    box-shadow: inset 0 0 0.625rem rgba(255, 255, 255, 0.1); /* Usa rem para la sombra */
+    padding: var(--gap-small);
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0.625rem rgba(255, 0, 0, 0.3); /* Usa rem para la sombra */
 }
 
 .sidebar-box {
-    margin-bottom: 1.25rem; /* Usa rem para el margen inferior */
+    margin-bottom: 1.25rem;
+    height: auto;
 }
 
 .sidebar-box h2 {
-    font-size: 1.5rem; /* Usa rem para el tamaño de fuente */
+    font-size: 1.5rem;
     color: var(--accent-color);
-    margin-bottom: var(--gap-small); /* Usa la variable para el margen inferior */
-    border-bottom: 0.125rem solid var(--accent-color); /* Usa rem para el borde inferior */
-    padding-bottom: 0.3125rem; /* Usa rem para el padding inferior */
-}
-
-.sidebar-box ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar-box ul li {
-    padding: 0.3125rem 0; /* Usa rem para el padding */
-    border-bottom: 0.0625rem solid var(--border-color); /* Usa rem para el borde inferior */
+    margin-bottom: var(--gap-small);
+    border-bottom: 0.125rem solid var(--accent-color);
+    padding-bottom: 0.3125rem;
 }
 
 .sidebar-box img {
     width: 100%;
-    border-radius: 0.3125rem; /* Usa rem para el radio del borde */
+    border-radius: 0.3125rem;
     transition: transform 0.3s ease;
 }
 
 .sidebar-box img:hover {
     transform: scale(1.05);
 }
+
+/* 🔥 Ajustes para listas y alineación */
+.custom-list-sb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-box .custom-list__item_rev {
+    display: flex; /* Usa flexbox para alinear icono y texto */
+    align-items: center; /* Centra verticalmente */
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: #f5f5f5;
+    padding: 0.5rem 0; /* Añade un poco de espacio */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil entre elementos */
+}
+
+
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -566,13 +607,6 @@ body {
     letter-spacing: 0.0625rem; /* Usa rem para el espaciado entre letras */
 }
 
-/* Botón activo (rojo sangre) */
-.nav-btn.active {
-    background: var(--primary-color); /* Usa la variable para el color de fondo */
-    color: white;
-    border-color: var(--accent-color); /* Usa la variable para el borde */
-    box-shadow: 0 0 1rem rgba(255, 0, 0, 0.7); /* Usa rem para la sombra */
-}
 
 /* Efecto hover */
 .nav-btn:hover {
@@ -580,6 +614,7 @@ body {
     border-color: var(--accent-color); /* Usa la variable para el borde */
     box-shadow: 0 0 1.5rem rgba(255, 0, 0, 0.9); /* Usa rem para la sombra */
     transform: scale(1.1);
+    color: inherit;
 }
 
 /* Estilos para el título */
@@ -608,6 +643,58 @@ body {
     margin: var(--gap-small) auto; /* Usa la variable para el margen */
     border: 0.0625rem solid var(--accent-color); /* Usa rem para el borde */
 }
+
+.cancion {
+
+    flex: 1;
+
+}
+
+/* Estilos existentes para .text-content */
+.text-content {
+    font-family: Arial, sans-serif;
+    color: #333;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Estilos para el nuevo contenedor .tracklist */
+.tracklist {
+    display: flex;
+    gap: 20px; /* Espacio entre las columnas */
+    margin-top: 20px; /* Espacio arriba de la lista de canciones */
+}
+
+.tracklist .columna {
+    flex: 1; /* Cada columna ocupa el mismo espacio */
+}
+
+.tracklist p {
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.tracklist p:first-child {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ccc;
+    color: white;
+}
+
+.tracklist .canción {
+    font-family: Arial, sans-serif;
+    color: white;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 /* Footer */
 #footer {
     background-color: #343a40;
