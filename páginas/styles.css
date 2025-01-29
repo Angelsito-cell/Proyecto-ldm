@@ -661,36 +661,93 @@ body {
 }
 
 /* Estilos para el nuevo contenedor .tracklist */
+.text-content {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    width: 100%;
+    max-width: 80%; /* Cambiado a porcentaje */
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Estilos para el nuevo contenedor .tracklist */
 .tracklist {
     display: flex;
-    gap: 20px; /* Espacio entre las columnas */
-    margin-top: 20px; /* Espacio arriba de la lista de canciones */
+    gap: var(--gap-medium); /* Usando variable para el gap */
+    margin-top: var(--gap-medium); /* Usando variable para el margen */
 }
 
 .tracklist .columna {
-    flex: 1; /* Cada columna ocupa el mismo espacio */
+    flex: 1;
+    padding-bottom: 2rem; /* Mantenido en rem */
 }
 
 .tracklist p {
     margin: 0;
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0; /* Cambiado a rem */
+    border-bottom: 1px solid var(--border-color); /* Usando variable para el color del borde */
 }
 
 .tracklist p:first-child {
     font-weight: bold;
-    font-size: 1.2em;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #ccc;
-    color: white;
+    font-size: var(--font-size-large); /* Usando variable para el tamaño de fuente */
+    padding-top: var(--gap-small); /* Usando variable para el padding */
+    padding-bottom: var(--gap-small); /* Usando variable para el padding */
+    border-bottom: 2px solid var(--accent-color); /* Usando variable para el color del borde */
+    color: var(--text-color); /* Usando variable para el color del texto */
 }
 
 .tracklist .canción {
-    font-family: Arial, sans-serif;
-    color: white;
+    font-family: var(--font-family);
+    color: var(--text-color); /* Usando variable para el color del texto */
     width: 100%;
-    max-width: 800px;
+    max-width: 80%; /* Cambiado a porcentaje */
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.tracklist .columna p:last-child {
+    border-bottom: none;
+}
+
+/* Estilos para .lineup */
+.lineup {
+    display: flex;
+    gap: var(--gap-medium); /* Usando variable para el gap */
+    margin-top: var(--gap-medium); /* Usando variable para el margen */
+}
+
+.lineup p {
+    margin: 0;
+    padding: 0.5rem 0; /* Cambiado a rem */
+    border-bottom: 1px solid var(--border-color); /* Usando variable para el color del borde */
+}
+
+.lineup .columna p:last-child {
+    border-bottom: none;
+}
+
+.lineup .columna {
+    flex: 1;
+    padding-bottom: 2rem; /* Mantenido en rem */
+}
+
+.lineup .miembros-p {
+    font-family: var(--font-family);
+    color: var(--text-color); /* Usando variable para el color del texto */
+    width: 100%;
+    max-width: 80%; /* Cambiado a porcentaje */
+    margin: 0 auto;
+    line-height: 1.6;
+    background-color: rgba(209, 29, 29, 0.866); /* Mantenido el color específico */
+    text-align: center;
+}
+
+.lineup .miembro {
+    font-family: var(--font-family);
+    color: var(--text-color); /* Usando variable para el color del texto */
+    width: 100%;
+    max-width: 80%; /* Cambiado a porcentaje */
     margin: 0 auto;
     line-height: 1.6;
 }
