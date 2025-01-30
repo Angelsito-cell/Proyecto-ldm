@@ -494,6 +494,7 @@ body {
     font-size: 2.5rem; /* Usa rem para el tamaño de fuente */
     color: var(--accent-color);
     text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8); /* Usa rem para la sombra del texto */
+    padding-top: 2rem;
 }
 
 .title-line {
@@ -751,6 +752,8 @@ body {
     margin: 0 auto;
     line-height: 1.6;
 }
+
+
 
 /* Footer */
 #footer {
