@@ -7,7 +7,7 @@
     --secondary-color: #2ecc71;
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
-    --background-image: url("imgs/infierno.jpg");
+    --background-image: url("../imgs/infierno.jpg");
     --font-family: 'Arial, sans-serif';
     --font-family-decorative: 'Cursive', 'Fantasy';
     --font-size-base: 1rem;
@@ -32,7 +32,7 @@ a {
 
 a:hover {
     color: inherit; /* Mantiene el color al pasar el mouse */
-    text-decoration: underline; /* Añade subrayado al pasar el mouse */
+    text-decoration: none; /* Añade subrayado al pasar el mouse */
 }
 
 /* Reset básico */
