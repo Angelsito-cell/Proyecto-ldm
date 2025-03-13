@@ -1,79 +1,32 @@
 @startuml
-' Clases principales
-class Cliente {
-    - id: int
-    - nombre: string
-    - email: string
-    + realizarPedido(pedido: Pedido)
-}
+' Definición de actores
+actor Cliente
+actor "Sistema Bancario" as SB
 
-class Pedido {
-    - id: int
-    - fecha: Date
-    - estado: EstadoPedido
-    - detalles: List<DetallePedido>
-    - pagos: List<Pago>
-    + calcularTotal(): float
-    + actualizarEstado(nuevoEstado: EstadoPedido)
-}
+' Definición de casos de uso
+usecase "Iniciar Sesion" as UC1
+usecase "Sacar Dinero" as UC2
+usecase "Hacer Transferencia" as UC3
+usecase "Realizar Ingreso" as UC4
 
-enum EstadoPedido {
-    Pdte
-    Pgdo
-    Pcdo
-    Envdo
-    Entgdo
-}
+' Casos de validación en el retiro de dinero
+usecase "Validar Saldo" as UC5
+usecase "Validar Limite Diario" as UC6
 
-class Producto {
-    - id: int
-    - nombre: string
-    - descripcion: string
-    - precio: float
-    - impuestos: float
-    - stock: int
-    + actualizarStock(cantidad: int)
-}
+' Relaciones entre elementos
+Cliente --> UC1
+Cliente --> UC2
+Cliente --> UC3
+Cliente --> UC4
 
-class DetallePedido {
-    - cantidad: int
-    - subtotal: float
-    + calcularSubtotal(): float
-}
+' Extensión en "Sacar Dinero"
+UC2 .> UC5 : <<extends>>
+UC2 .> UC6 : <<extends>>
 
-class Pago {
-    - id: int
-    - monto: float
-    - fecha: Date
-    - formaPago: FormaPago
-}
-
-abstract class FormaPago {
-}
-
-class PagoTarjeta {
-    - numeroTarjeta: string
-    - fechaExpiracion: Date
-    - tipoTarjeta: string
-}
-
-class PagoEfectivo {
-    - tipoMoneda: string
-}
-
-class PagoCheque {
-    - nombre: string
-    - banco: string
-}
-
-' Relaciones entre clases
-Cliente "1" -- "0..*" Pedido
-Pedido "1" -- "1..*" DetallePedido
-DetallePedido "1" -- "1" Producto
-Pedido "1" -- "0..*" Pago
-Pago "1" --|> FormaPago
-FormaPago <|-- PagoTarjeta
-FormaPago <|-- PagoEfectivo
-FormaPago <|-- PagoCheque
-Pedido "1" -- "*" EstadoPedido
+' Interacción con el sistema bancario
+UC1 --> SB
+UC2 --> SB
+UC3 --> SB
+UC4 --> SB
 @enduml
+
