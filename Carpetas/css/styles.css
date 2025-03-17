@@ -836,3 +836,9 @@ body {
     padding: 1rem;
     margin-top: 2rem;
 }
+
+#no-results {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    text-align: center;
+}
