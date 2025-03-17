@@ -1,0 +1,32 @@
+@startuml
+' Definición de actores
+actor Cliente
+actor "Sistema Bancario" as SB
+
+' Definición de casos de uso
+usecase "Iniciar Sesion" as UC1
+usecase "Sacar Dinero" as UC2
+usecase "Hacer Transferencia" as UC3
+usecase "Realizar Ingreso" as UC4
+
+' Casos de validación en el retiro de dinero
+usecase "Validar Saldo" as UC5
+usecase "Validar Limite Diario" as UC6
+
+' Relaciones entre elementos
+Cliente --> UC1
+Cliente --> UC2
+Cliente --> UC3
+Cliente --> UC4
+
+' Extensión en "Sacar Dinero"
+UC2 .> UC5 : <<extends>>
+UC2 .> UC6 : <<extends>>
+
+' Interacción con el sistema bancario
+UC1 --> SB
+UC2 --> SB
+UC3 --> SB
+UC4 --> SB
+@enduml
+
